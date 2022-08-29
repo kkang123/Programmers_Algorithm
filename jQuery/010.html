@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>엘리먼트 조작</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
+    <style>
+        .item-container{
+            margin: 20px;
+            padding: 20px;
+            display: flex;
+        }
+
+        .item-container .item{
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        #box1{
+            border: 1px solid red;
+        }
+
+        #box2{
+            border: 1px solid blue;
+        }
+   </style>
+    <script>
+       $(function(){
+        console.log($("#item1").html());
+
+        console.log($("#item1").text());
+        // text만 추출
+
+        $("#item2").html("<strong>Swift</strong>");
+        // 변경
+
+        $("#item3").text("kotlin");
+        // text 변경
+
+        $("#box2").append("<div class='item'>c#</div>");
+        // 추가
+
+        $("#item4").appendTo("#box2");
+        // 이동
+
+        $("#item5").clone().appendTo("#box2");
+        // 복사
+
+        $("#btn1").on("click", function(){
+            var result = $("#text1").val();
+            $("#result").text(result);
+            // input값 입력 후 버튼 클릭 시 text 값 출력
+        });
+    });
+    </script>
+</head>
+<body>
+    <!-- div#box1.item-container -->
+    <div id="box1" class="item-container">
+        <div class="item" id="item1"><strong>Java</strong></div>
+        <div class="item" id="item2"><strong>Python</strong></div>
+        <div class="item" id="item3"><strong>javascript</strong></div>
+        <div class="item" id="item4"><strong>Ruby</strong></div>
+        <div class="item" id="item5"><strong>C++</strong></div>
+    </div>
+    <div id="box2" class="item-container"></div>
+    <div>
+        <div>
+            <input type="text" id="text1">
+            <button id="btn1">클릭</button>
+        </div>
+        <div>
+            결과값 : <span id="result"></span>
+        </div>
+    </div>
+</body>
+</html>

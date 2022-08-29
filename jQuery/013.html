@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
+    <script>
+        $(function(){
+           var $imageList = $("#image-container img");
+           var $currentImage;
+
+            var $mainImageContainer = $("#main-image-container");
+           //선택한 이미지 띄우기 위한 변수 설정
+
+        //$("#image-container img");
+           $imageList.on("click", function(){
+            if($currentImage && $currentImage.hasClass("selected")){
+                //currentImage나 selected 클래스를 가지는  cuttentImage들 선택
+                $currentImage.removeClass("selected");
+            //선택되는 것들 제거
+            }
+
+            $currentImage = $(this);
+            //this에 저장했고
+
+            $mainImageContainer.empty();
+            //메인이미지 비우고
+            $currentImage.clone().appendTo($mainImageContainer);
+
+            $currentImage.addClass("selected");
+            //클래스 추가
+           });
+        });
+    </script>
+    <style>
+        #main-image-container{
+            margin: 10px;
+            min-height: 500px;
+        }
+
+        #main-image-container img{
+            height: 500px;
+        }
+
+        #images-container img{
+            height: 150px;
+            margin: 10px;
+        }
+
+        .selected{
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-image-container">
+
+    </div>
+
+    <div id="image-container">
+        <img src="2.png" />
+        <img src="3.jpg" />
+        <img src="4.jpg" />
+        <img src="5.png" />
+    </div>
+</body>
+</html>

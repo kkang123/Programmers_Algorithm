@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>애니메이션효과</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
+    <style>
+        .item-container{
+            margin: 20px;
+            padding: 20px;
+            display: flex;
+        }
+
+        .item-container .item{
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        #item1{
+            background-color: #fbffb9;
+        }
+
+        #item2{
+            background-color: #ec7357;
+        }
+   </style>
+    <script>
+       $(function(){
+        $("#btn1").on("click", function(){
+            $("#item1").fadeOut()
+        });
+        //박스가 서서히 사라짐
+
+
+        $("#btn2").on("click", function(){
+            $("#item1").fadeIn()
+        });
+        //박스가 서서히 나타남
+
+        $("#btn3").on("click", function(){
+        $("#item2").slideUp()
+       });
+       //위로 올라가서 사라지고
+
+       $("#btn4").on("click", function(){
+        $("#item2").slideDown()
+       });
+       //사라진것을 아래로 내려옴
+
+       $("#btn5").on("click", function(){
+        $("#item2").slideToggle()
+       });
+       //자동으로 사라졌다가 나타남
+
+       //애니메이션효과 속도 설정 가능 jquery에서 검색할 것
+
+    });
+    </script>
+</head>
+<body>
+    <!-- div#box1.item-container -->
+    <div id="box1" class="item-container">
+        <div class="item" id="item1"><strong>Java</strong></div>
+        <div class="item" id="item2"><strong>Python</strong></div>
+    </div>
+   
+    <div>
+        <button id="btn1">fadeOut</button>
+        <button id="btn2">fadeIn</button>
+        <button id="btn3">slideUp</button>
+        <button id="btn4">slideDown</button>
+        <button id="btn5">slideToggle</button>
+    </div>
+
+</body>
+</html>

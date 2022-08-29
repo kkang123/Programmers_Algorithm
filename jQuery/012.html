@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").on("click", function(){
+                $("#result").load("sample.html");
+            });
+            //본 화면에 로딩
+
+            $("#btn2").on("click", function(){
+                $.get("sample.html", function(data, status){
+                    console.log(data);
+                    console.log(status);
+                })
+            });
+            //그냥 가져오는것
+
+            $("#btn2").on("click", function(){
+                $.getJSON("numbers.json", function(data, status){
+                    console.log(data);
+                    $.each(data, function(i, field){
+                        $("#result").append("<p>" + filed + "</p>");
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>result</h3>
+    <div id="result"></div>
+    <div>
+        <button id="btn1">load html</button>
+        <button id="btn2">get</button>
+        <button id="btn3">getJson</button>
+    </div>
+</body>
+</html>

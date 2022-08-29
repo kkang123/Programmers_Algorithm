@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>btn 클릭으로 상자 숨기기 보이기</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
+    <style>
+        .box{
+            border: 1px solid black;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        $(function(){
+           $("#btn1").on("click", function(){
+            $("#box1").hide();
+            // 버튼1 선택 후 클릭시 box1을 실행하여 숨기겠다는 명령어
+           });
+
+           $("#btn2").on("click", function(){
+            $("#box1").show();
+           });
+
+
+           $(".box").show();
+
+
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <button id="btn1">hide Box1</button>
+        <button id="btn2">show Box2</button>
+        <button id="btn3">button3</button>
+        <button id="btn4">button4</button>
+    </div>
+   <div id="box1" class="box">Box1</div>
+   <div id="box2" class="box">Box2</div>
+</body>
+</html>
