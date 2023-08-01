@@ -38,10 +38,24 @@ ex) `JHJ - DAY1 - 01_문자열 출력하기`
 
 ## 🔹 Commit 컨벤션
 
+|태그 이름| 설명|
+|---|---|
+|Feat	|새로운 기능을 추가할 경우|
+|Fix|	버그를 고친 경우|
+|Design	|CSS 등 사용자 UI 디자인 변경|
+|!BREAKING CHANGE	|커다란 API 변경의 경우|
+!HOTFIX	|급하게 치명적인 버그를 고쳐야하는 경우|
+|Style	|코드 포맷 변경, 세미 콜론 누락, 코드 수정이 없는 경우|
+|Refactor	|프로덕션 코드 리팩토링|
+|Comment	|필요한 주석 추가 및 변경
+|Docs	|문서를 수정한 경우|
+|Test	|테스트 추가, 테스트 리팩토링(프로덕션 코드 변경 X)|
+|Chore	|빌드 태스트 업데이트, 패키지 매니저를 설정하는 경우(프로덕션 코드 변경 X)|
+|Rename	|파일 혹은 폴더명을 수정하거나 옮기는 작업만인 경우|
+|Remove	|파일을 삭제하는 작업만 수행한 경우|
 
 
-
-## 🔥코딩 테스트 스터디🔥
+<!-- ## 🔥코딩 테스트 스터디🔥
 - 방학 기간 동안 진행되는 **코딩 테스트 대비 문제 풀이** 스터디입니다.
 - 매 주 **✔금요일 23:59** 까지 [5문제](https://github.com/Study-CodingTest/Study/issues)를 풀고, **✔토요일 23:59** 까지 [코드 리뷰](https://github.com/Study-CodingTest/Study/pulls)를 진행합니다.
     - 문제는 각자 원하는 문제 1개 + 나머지는 [tony9402 오늘의 문제](https://github.com/tony9402/baekjoon/blob/main/picked.md)에서 보충합니다.
@@ -143,4 +157,4 @@ body
 
 ### 🔹 Cpp File Naming 컨벤션
 - `본인이름.cpp`
-    > ex) 홍길동.cpp
+    > ex) 홍길동.cpp -->
