@@ -24,7 +24,7 @@ git push
 
 <br>
 
--push 후 main 브랜치로 돌아올 것!  
+- push 후 main 브랜치로 돌아올 것!  
 `git checkout main`
 
 <br>
