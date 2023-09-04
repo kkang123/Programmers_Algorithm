@@ -24,6 +24,17 @@ function solution(quiz) {
     return res;
 }
 
+//구조분해할당 사용 ( 재웅님 풀이 )
+// function solution(quiz) {
+//     return quiz.map((math) => {
+//       const [X, plusMinus, Y, equal, Z] = math.split(" ");
+//       return parseInt(X) + (plusMinus === "+" ? parseInt(Y) : -parseInt(Y)) ===
+//         parseInt(Z)
+//         ? "O"
+//         : "X";
+//     });
+//   }
+
 // 테스트 1 〉	통과 (0.19ms, 33.5MB)
 // 테스트 2 〉	통과 (0.19ms, 33.4MB)
 // 테스트 3 〉	통과 (0.26ms, 33.5MB)
