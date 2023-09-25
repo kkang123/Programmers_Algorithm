@@ -5,3 +5,34 @@
 // line_2.png
 
 // 선분이 두 개 이상 겹친 곳은 [-2, -1], [0, 1]로 길이 2만큼 겹쳐있습니다.
+
+function solution(lines) {
+  let line = new Array(200).fill(0);
+
+  for (let i = 0; i < lines.length; i++) {
+    let [min, max] = lines[i];
+    for (let j = min; j < max; j++) {
+      line[j]++;
+    }
+  }
+
+  let count = 0;
+  for (let i = 0; i < line.length; i++) {
+    if (line[i] > 1) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+// 테스트 1 〉	통과 (0.26ms, 33.4MB)
+// 테스트 2 〉	실패 (0.56ms, 33.5MB)
+// 테스트 3 〉	통과 (0.24ms, 33.4MB)
+// 테스트 4 〉	실패 (0.41ms, 33.5MB)
+// 테스트 5 〉	통과 (0.28ms, 33.5MB)
+// 테스트 6 〉	실패 (0.31ms, 33.4MB)
+// 테스트 7 〉	통과 (0.22ms, 33.5MB)
+// 테스트 8 〉	실패 (0.32ms, 33.5MB)
+// 테스트 9 〉	통과 (0.16ms, 33.4MB)
+// 테스트 10 〉	통과 (0.15ms, 33.6MB)
