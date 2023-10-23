@@ -9,14 +9,13 @@
 // - 로그인이 실패했을 때 아이디가 일치하는 회원이 없다면 “fail”를, 아이디는 일치하지만 비밀번호가 일치하는 회원이 없다면 “wrong pw”를 return 합니다.
 
 function solution(id_pw, db) {
-    let findId = db.filter((e) => e[0] === id_pw[0]);
-    let findPw = findId.filter((e) => e[1] === id_pw[1]);
+  let findId = db.filter((e) => e[0] === id_pw[0]);
+  let findPw = findId.filter((e) => e[1] === id_pw[1]);
 
-    if (!!findPw.length) return 'login';
-    else if (!!findId.length) return 'wrong pw';
-    return 'fail';
-    } 
-
+  if (!!findPw.length) return "login";
+  else if (!!findId.length) return "wrong pw";
+  return "fail";
+}
 
 /*
 테스트 1 〉	통과 (0.07ms, 33.4MB)
